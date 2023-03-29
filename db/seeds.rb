@@ -18,9 +18,9 @@ puts "seeding..................."
       description: Faker::Lorem.paragraph(sentence_count: 3),
       category: Faker::Job.field,
       goal_amount: Faker::Number.decimal(l_digits: 5, r_digits: 2),
+      current_amount: Faker::Number.decimal(l_digits: 4, r_digits: 1),
       start_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
       end_date: Faker::Date.between(from: 2.months.from_now, to: 1.year.from_now),
-      user_id: Faker::Number.between(from: 1, to: 10)
     )
   end
 
@@ -33,7 +33,8 @@ Review.create(
   rating: Faker::Number.between(from: 1, to: 5)
 )
 end
-  
+
+
 # Create 10 pledges
 10.times do
   Pledge.create(

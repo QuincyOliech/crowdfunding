@@ -6,9 +6,10 @@ class PledgesController < ApplicationController
     def show 
         render json: find_pledge
     end 
-     
+
     def create
         pledge = Pledge.create!(pledge_params )
+        pledge.campaign.update(current_amount:pledge.campaign.current_amount+pledge.pledge_amount)
         render json: pledge, status: :created
     end 
 

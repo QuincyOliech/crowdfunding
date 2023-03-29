@@ -16,9 +16,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_164320) do
     t.string "description"
     t.string "category"
     t.float "goal_amount"
+    t.integer "current_amount"
     t.date "start_date"
     t.date "end_date"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
