@@ -4,7 +4,7 @@ class CampaignsController < ApplicationController
     end
 
     def show 
-        render json: find_campaign,include:["users","users.reviews"]
+        render json: find_campaign
     end 
 
     def create
@@ -27,11 +27,11 @@ class CampaignsController < ApplicationController
     private 
 
     def find_campaign
-        # Campaign.find(params[:id])
         Campaign.find_by(id: params[:id])
     end 
 
     def campaign_params
         params.permit(:title, :description, :category, :goal_amount, :start_date, :end_date, :user_id)
     end
+
 end
